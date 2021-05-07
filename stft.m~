@@ -1,0 +1,21 @@
+function [X, f, t] = stft(x,w,d,N_fft,Fs)
+    
+    M = floor(length(x)/d);
+    X = zeros(N_fft,M);
+    d=-1;
+    for j = 1:M
+        d=d+10;
+        for i=1:N_fft
+            if(i+d) > length(x)
+                if(j ~= M)
+                    for k = i:N_fft
+                        X(k,j) = x(k+d
+                X(i:N_fft,M) = 0;
+                break
+            end
+            X(i,j) = x(i+d);
+        end
+    end
+    X = X*w;
+    
+    
